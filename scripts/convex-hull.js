@@ -1,8 +1,8 @@
 "use-strict";
 
-rectangle.addEventListener("click", () => {
-  console.log(rectangle.querySelectorAll(".draggable"));
-});
+// rectangle.addEventListener("click", () => {
+//   console.log(rectangle.querySelectorAll(".draggable"));
+// });
 
 function convexHull(arg) {
   return arg;
@@ -45,5 +45,3 @@ class Vector {
     return Math.acos(num / denom);
   }
 }
-
-export { Vector, convexHull };

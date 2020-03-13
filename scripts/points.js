@@ -1,7 +1,5 @@
 "use-strict";
 
-import * as cHull from "../scripts/convex-hull.js";
-
 const rectangle = document.getElementById("viewfinder");
 
 rectangle.addEventListener("click", function(ev) {
@@ -9,7 +7,7 @@ rectangle.addEventListener("click", function(ev) {
     let y = ev.layerY - rectangle.offsetTop;
     let x = ev.layerX - rectangle.offsetLeft;
     createPoint(x, y);
-    console.log(cHull.convexHull(ev));
+    console.log(convexHull(ev));
   }
 });
 
@@ -54,7 +52,7 @@ function makeDraggable(evt) {
   function startDrag(evt) {
     if (evt.target.classList.contains("draggable")) {
       selectedElement = evt.target;
-      console.log(cHull.convexHull(ev.target));
+      console.log(convexHull(evt.target));
     }
   }
 
@@ -68,7 +66,7 @@ function makeDraggable(evt) {
       let mouseY = event.clientY - rectangle.offsetTop; // y coordinate relative to rectangle
       selectedElement.setAttributeNS(null, "cx", mouseX.toString());
       selectedElement.setAttributeNS(null, "cy", mouseY.toString());
-      console.log(cHull.convexHull(evt));
+      console.log(convexHull(evt));
     }
   }
 
